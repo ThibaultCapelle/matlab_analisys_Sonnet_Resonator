@@ -1,0 +1,98 @@
+FTYP EQUA 10  ! Sonnet Equation File
+
+EQN "differential capacitance"
+EQS USER
+EQH 
+END EQH 
+ARGS 4
+ARG 1 ! begin arg 1 definition
+NAME Y12
+RES Y 12
+END ARG ! end of arg 1 definition
+ARG 2 ! begin arg 2 definition
+NAME Y11
+RES Y 11
+END ARG ! end of arg 2 definition
+ARG 3 ! begin arg 3 definition
+NAME Y21
+RES Y 21
+END ARG ! end of arg 3 definition
+ARG 4 ! begin arg 4 definition
+NAME Y22
+RES Y 22
+END ARG ! end of arg 4 definition
+BODY 
+-1.0E12/(TWO_PI*FREQ*imag(4/(Y11+Y22-Y12-Y21)))
+END BODY 
+END EQN 
+
+EQN "differential inductance"
+EQS USER_FILE
+EQH 
+END EQH 
+ARGS 2
+ARG 1 ! begin arg 1 definition
+NAME Y11
+RES Y 11
+END ARG ! end of arg 1 definition
+ARG 2 ! begin arg 2 definition
+NAME Y12
+RES Y 12
+END ARG ! end of arg 2 definition
+BODY 
+1.0E9 * imag( 1 / (Y11-Y12) ) / ( TWO_PI * FREQ )
+END BODY 
+END EQN 
+
+EQN "differential inductance_2"
+EQS USER
+EQH 
+END EQH 
+ARGS 4
+ARG 1 ! begin arg 1 definition
+NAME Y11
+RES Y 11
+END ARG ! end of arg 1 definition
+ARG 2 ! begin arg 2 definition
+NAME Y12
+RES Y 12
+END ARG ! end of arg 2 definition
+ARG 3 ! begin arg 3 definition
+NAME Y21
+RES Y 21
+END ARG ! end of arg 3 definition
+ARG 4 ! begin arg 4 definition
+NAME Y22
+RES Y 22
+END ARG ! end of arg 4 definition
+BODY 
+1.0E9*(1/(TWO_PI*FREQ))*imag(4/(Y11+Y22-Y12-Y21))
+END BODY 
+END EQN 
+
+EQN "differential inductance_3"
+EQS USER
+EQH 
+END EQH 
+ARGS 4
+ARG 1 ! begin arg 1 definition
+NAME Y11
+RES Y 33
+END ARG ! end of arg 1 definition
+ARG 2 ! begin arg 2 definition
+NAME Y12
+RES Y 34
+END ARG ! end of arg 2 definition
+ARG 3 ! begin arg 3 definition
+NAME Y21
+RES Y 43
+END ARG ! end of arg 3 definition
+ARG 4 ! begin arg 4 definition
+NAME Y22
+RES Y 44
+END ARG ! end of arg 4 definition
+BODY 
+1.0E9*(1/(TWO_PI*FREQ))*imag(4/(Y11+Y22-Y12-Y21))
+END BODY 
+END EQN 
+

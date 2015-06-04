@@ -19,6 +19,14 @@ for i=1:size(M,1)
 end
 M=subindex(M,index_cut,:);
 frequency=(10^9).*M(:,1);
+% Re_Y11=M(:,22);
+% Im_Y11=M(:,23);
+% Re_Y12=M(:,24);
+% Im_Y12=M(:,25);
+% Re_Y21=M(:,30);
+% Im_Y21=M(:,31);
+% Re_Y22=M(:,32);
+% Im_Y22=M(:,33);
 Re_Y11=M(:,2);
 Im_Y11=M(:,3);
 Re_Y12=M(:,4);
@@ -27,6 +35,7 @@ Re_Y21=M(:,6);
 Im_Y21=M(:,7);
 Re_Y22=M(:,8);
 Im_Y22=M(:,9);
+
 Y12=Re_Y12+1i*Im_Y12;
 Y11=Re_Y11 +1i*Im_Y11;
 Y21=Re_Y21+1i*Im_Y21;
