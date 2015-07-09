@@ -51,4 +51,5 @@ Temporary Items
 *.fig
 
 sbox
+matlab-analysis
 sondata

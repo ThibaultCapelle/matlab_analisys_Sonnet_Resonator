@@ -2,7 +2,7 @@ close all;
 N=100;
 u=1:N;
 M=1000;
-L=linspace(0,5,M);
+L=linspace(0,1,M);
 B=@(lambda,n)(1./(2*n-1)).*besselj(0,pi*lambda.*(2*n-1)./2);
 E=@(lambda,n)(B(lambda,n).^2)*(2*n-1);
 energy=zeros(N,M);
